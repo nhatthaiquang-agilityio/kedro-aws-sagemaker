@@ -3,12 +3,12 @@
 
 ### Prerequisites
 + Kedro 0.16.6
-+ SageMaker
++ S3 bucket & SageMaker
 + scikit-learn 0.23.0
 + pickle5 0.0.11
 
 ### Issues
-+ Could not move to another region in AWS SageMaker
++ Could not move S3 objects to another region in AWS SageMaker
     ```
     File "/usr/local/lib/python3.7/site-packages/kedro/pipeline/node.py", line 433, in run
     raise exc
@@ -28,14 +28,31 @@
         return self._make_api_call(operation_name, kwargs)
     File "/usr/local/lib/python3.7/site-packages/botocore/client.py", line 676, in _make_api_call
         raise error_class(parsed_response, operation_name)
-    botocore.exceptions.ClientError: An error occurred (ValidationException) when calling the CreateTrainingJob operation: No S3 objects found under S3 URL "s3://kedro-data" given in input data source. Please ensure that the bucket exists in the selected region (us-east-1), that objects exist under that S3 prefix, and that the role "arn:aws:iam::783560535431:role/SageMaker-ExecRole" has "s3:ListBucket" permissions on bucket "kedro-data". Error message from S3: The bucket is in this region: ap-southeast-1. Please use this region to retry the request
+    botocore.exceptions.ClientError: An error occurred (ValidationException) when calling the CreateTrainingJob operation:
+    No S3 objects found under S3 URL "s3://kedro-data" given in input data source.
+    Please ensure that the bucket exists in the selected region (us-east-1),
+    that objects exist under that S3 prefix,
+    and that the role "arn:aws:iam::783560535431:role/SageMaker-ExecRole" has "s3:ListBucket" permissions on bucket "kedro-data".
+    Error message from S3: The bucket is in this region: ap-southeast-1.
+    Please use this region to retry the request
     ```
-    Currnetly, us-east-1 region is default
+    Currently, us-east-1 region is default
 
 ### Results
 + Kedro Visualise Pipelines
     ![Kedro Viz](images/Kedro-Viz.jpg)
 
++ Kedro AWS SageMaker
+    ![Kedro SageMaker](images/Kedro-SageMaker.jpg)
+
++ Amazon SageMaker Completed
+    ![Amazon SageMaker Completed](images/Amazon-SageMaker-Completed.jpg)
+
++ Amazon SageMaker Detail
+    ![Amazon SageMaker Detail](images/AWS-SageMaker-Detail.jpg)
+
 
 ### References
 + [Deployment on AWS SageMaker](https://kedro.readthedocs.io/en/0.16.6/10_deployment/08_aws_sagemaker.html)
+
++ [Scikit learn Estimator](https://sagemaker.readthedocs.io/en/stable/frameworks/sklearn/sagemaker.sklearn.html#scikit-learn-estimator)
