@@ -1,0 +1,47 @@
+companies:
+  type: pandas.CSVDataSet
+  filepath: s3://kedro-data-sagemaker/companies.csv
+
+shuttles:
+  type: pandas.ExcelDataSet
+  filepath: s3://kedro-data-sagemaker/shuttles.xlsx
+
+reviews:
+  type: pandas.CSVDataSet
+  filepath: s3://kedro-data-sagemaker/reviews.csv
+
+preprocessed_companies:
+  type: pandas.CSVDataSet
+  filepath: s3://kedro-data-sagemaker/preprocessed_companies.csv
+
+preprocessed_shuttles:
+  type: pandas.CSVDataSet
+  filepath: s3://kedro-data-sagemaker/preprocessed_shuttles.csv
+
+master_table:
+  type: pandas.CSVDataSet
+  filepath: s3://kedro-data-sagemaker/master_table.csv
+
+Xtrain:
+  type: pickle.PickleDataSet
+  filepath: s3://kedro-data-sagemaker/Xtrain.pkl
+
+X_train@path:
+  type: MemoryDataSet
+  data: s3://kedro-data-sagemaker/Xtrain.pkl
+
+Ytrain:
+  type: pickle.PickleDataSet
+  filepath: s3://kedro-data-sagemaker/Ytrain.pkl
+
+Xtest:
+  type: pickle.PickleDataSet
+  filepath: s3://kedro-data-sagemaker/Xtest.pkl
+
+Ytest:
+  type: pickle.PickleDataSet
+  filepath: s3://kedro-data-sagemaker/Ytest.pkl
+
+regression_model:
+  type: pickle.PickleDataSet
+  filepath: s3://kedro-data-sagemaker/pickle_model.pkl

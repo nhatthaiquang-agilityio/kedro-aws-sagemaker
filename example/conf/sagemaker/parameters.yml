@@ -1,0 +1,7 @@
+sklearn_estimator_kwargs:
+  entry_point: src/example/sagemaker_entry_point.py
+  role: SageMaker-ExecRole
+  instance_type: ml.m4.xlarge
+  instance_count: 1
+  framework_version: 0.23-1
+  output_path: ${s3.output_path}

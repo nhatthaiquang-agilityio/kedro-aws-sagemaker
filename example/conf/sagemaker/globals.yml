@@ -1,0 +1,3 @@
+s3:
+  train_path: s3://kedro-data-sagemaker/train
+  output_path: s3://kedro-data-sagemaker/output
