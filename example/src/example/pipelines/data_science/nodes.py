@@ -136,4 +136,3 @@ def evaluate_model(
     score = r2_score(Ytest, Ypredict)
     logger = logging.getLogger(__name__)
     logger.info("Model has a coefficient R^2 of %.3f.", score)
-    return None

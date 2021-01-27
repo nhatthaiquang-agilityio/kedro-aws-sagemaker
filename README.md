@@ -1,5 +1,7 @@
 # Kedro AWS SageMaker
-    Integate Amazon AWS SageMaker into the Kedro pipeline. How to build machine learning pipelines in Kedro and while taking advantage of the power of SageMaker for potentially compute-intensive machine learning tasks.
+    Integate Amazon AWS SageMaker into the Kedro pipeline.
+    How to build machine learning pipelines in Kedro and while taking advantage of
+    the power of SageMaker for potentially compute-intensive machine learning tasks.
 
 ### Prerequisites
 + Kedro 0.16.6
