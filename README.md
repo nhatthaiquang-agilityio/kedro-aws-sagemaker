@@ -40,6 +40,8 @@
     ```
     Currently, us-east-1 region is default
 
+    + Fixed: set region=ap-southeast-1 into ~/.aws/config file.
+
 ### Results
 + Kedro Visualise Pipelines
     ![Kedro Viz](images/Kedro-Viz.jpg)
